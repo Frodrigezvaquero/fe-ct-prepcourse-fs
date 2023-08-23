@@ -134,13 +134,23 @@ function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
-   
+   num = num.toString()
+   console.log(num.charAt(4));
+
+   if(num.charAt(0) === "9") return true;
+   else return false;
 }
+
+console.log(empiezaConNueve(54));
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
+   for(var i = 0 ; i < array.length ; i++){
+      if(array[i] === array[i + 1]) return true;
+      else return false;
+   }
 }
 
 function mesesDelAño(array) {
@@ -148,19 +158,47 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   var nuevoArray =[]
+
+   for(var i = 0 ; i < array.length; i++){
+      if(array[i] === "Enero" || array[i] === "Marzo" || array[i] === "Noviembre"){
+         nuevoArray.push(array[i])
+      }
+   } 
+   
+   if(nuevoArray.length === 3) return nuevoArray;
+   else return "No se encontraron los meses pedidos";
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   var tablaDelSeis =[];
+
+   var numeroMultiplicar = 0;
+
+   while(numeroMultiplicar <= 10){
+      var producto = 6 * numeroMultiplicar;
+      tablaDelSeis.push(producto)
+      numeroMultiplicar++;
+   }
+   return tablaDelSeis;
 }
+console.log(tablaDelSeis());
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   var nuevoArray = [];
+   for(var i = 0 ; i < array.length ; i++){
+      if(array[i] > 100) nuevoArray.push(array[i])
+   }
+   return nuevoArray;
 }
+
+   
 
 /* ----------------------------------------------------------------------------------
 💪 EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT  EXTRA CREDIT 💪
@@ -173,6 +211,18 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   var array = [];
+   var iterador = 0;
+   while(iterador < 10){
+      num = num + 2;
+      if(num === iterador)break;
+      array.push(num)
+      iterador++;
+   }
+   if(iterador < 10)return "Se interrumpió la ejecución";
+
+   return array;
+
 }
 
 function continueStatement(num) {
@@ -182,6 +232,18 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   var array =[];
+   var iterador = 0;
+
+   while(iterador < 10){
+      iterador++;
+      if(iterador === 5) continue;
+      num = num + 2
+      array.push + 2
+      array.push(num)
+   }
+
+   return array;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
